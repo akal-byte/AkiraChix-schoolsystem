@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+    #table{
+        width: 100%;
+      }
+      #table td, #table th {
+          border: 1px solid #ddd;
+          padding: 8px;
+        }
+        #table tr:nth-child(even){background-color: #F2F2F2;}
+        #table tr:hover {background-color: #ddd;}
+        #table th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: purple;
+            color: white;
+            font-family:sans-serif;
+        }
+    </style>
+    <table id="table">
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Age</th>
+            <th>Date of Birth</th>
+            <th>Email</th>
+            <th>Nationality</th>
+            <th>gender</th>
+            <!-- <th>language</th>
+            <th>idNumber</th>
+            <th>phone_number</th>
+            <th>courses</th>
+            <th>class_name</th>
+            <th>room_number</th>
+            <th>mentor_name</th>
+            <th>asset_number</th>
+            <th>guardian_name</th> -->
+
+        </tr>
+        {% for student in students%}
+        <tr>     
+        <td>{{student.first_name}}</td>
+        <td>{{student.last_name}}</td>
+        <td>{{student.age}}</td>
+        <td>{{student.date_of_birth}}</td>
+        <td>{{student.email}}</td>
+        <td>{{student.nationality}}</td>
+        <td>{{student.gender}}</td>
+        <!-- <td>{{student.language}}</td>
+        <td>{{student.idNumber}}</td>
+        <td>{{student.phone_number}}</td>
+        <td>{{student.courses}}</td>
+        <td>{{student.class_name}}</td>
+        <td>{{student.room_number}}</td>
+        <td>{{student.mentor_name}}</td>
+        <td>{{student.asset_number}}</td>
+        <td>{{student.guardian_name}}</td> -->
+    </tr>
+    {%endfor%}
+    </table>
+</body>
+</html>

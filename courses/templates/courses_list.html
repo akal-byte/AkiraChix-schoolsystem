@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+    #table{
+        width: 100%;
+      }
+      #table td, #table th {
+          border: 1px solid #ddd;
+          padding: 8px;
+        }
+        #table tr:nth-child(even){background-color: #F2F2F2;}
+        #table tr:hover {background-color: #ddd;}
+        #table th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: purple;
+            color: white;
+            font-family:sans-serif;
+        }
+    </style>
+    <table id="table">
+        <tr>
+            <th>Title</th>
+            <th>Unit Id</th>
+            <th>Stack</th>
+            <th>marketability</th>
+            <th>course_id</th>
+        </tr>
+        {% for course in courses%}
+        <tr>     
+        <td>{{course.title}}</td>
+        <td>{{course.unit_id}}</td>
+        <td>{{course.stack}}</td>
+        <td>{{course.marketability}}</td>
+        <td>{{course.course_id}}</td>
+    </tr>
+    {%endfor%}
+    </table>
+</body>
+</html>

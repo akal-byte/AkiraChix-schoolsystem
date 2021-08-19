@@ -45,6 +45,7 @@
            margin-bottom: 15px;
            display: flex;
            align-items: center;
+           color: white;
        }
        .wrapper.wrapper.form.input_field label{
            width: 200px;
@@ -70,7 +71,7 @@
     </style>
    <div class="wrapper">
        <div class="form">
-    <form method="POST">
+    <form method="POST" enctype="multipart/form-data">
         {%csrf_token%}
         <h1> Registration Form </h1>
         {{form.as_p}}

@@ -11,7 +11,7 @@ class Trainer(models.Model):
     syllabus=models.CharField(max_length=105,blank=True,null=True)
     course_description=models.CharField(max_length=200,blank=True,null=True)
     # resume=models.FileField()
-    image=models.ImageField(blank=True,null=True)
+    # image=models.ImageField(blank=True,null=True)
     id_number=models.PositiveSmallIntegerField(blank=True,null=True)
     gender_choices=(
      ("Female","Female"),
