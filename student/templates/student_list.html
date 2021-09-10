@@ -35,15 +35,11 @@
             <th>Email</th>
             <th>Nationality</th>
             <th>gender</th>
-            <!-- <th>language</th>
-            <th>idNumber</th>
-            <th>phone_number</th>
-            <th>courses</th>
-            <th>class_name</th>
-            <th>room_number</th>
-            <th>mentor_name</th>
-            <th>asset_number</th>
-            <th>guardian_name</th> -->
+            <th>Health Records</th>
+            <th>Image</th>
+            <th>Edit</th>
+            <th>Profile</th>
+            <th>Delete</th>
 
         </tr>
         {% for student in students%}
@@ -55,15 +51,12 @@
         <td>{{student.email}}</td>
         <td>{{student.nationality}}</td>
         <td>{{student.gender}}</td>
-        <!-- <td>{{student.language}}</td>
-        <td>{{student.idNumber}}</td>
-        <td>{{student.phone_number}}</td>
-        <td>{{student.courses}}</td>
-        <td>{{student.class_name}}</td>
-        <td>{{student.room_number}}</td>
-        <td>{{student.mentor_name}}</td>
-        <td>{{student.asset_number}}</td>
-        <td>{{student.guardian_name}}</td> -->
+        <td>{{student.health_records}}</td>
+        <td>{{student.image}}</td>
+        <td><a href="{%url 'edit_student' id=student.id%}">Edit</a></td>
+        <td><a href="{%url 'student_profile' id=student.id%}">Profile</a></td>
+        <td><a href="{%url 'delete_student' id=student.id%}">Delete</a></td>
+
     </tr>
     {%endfor%}
     </table>

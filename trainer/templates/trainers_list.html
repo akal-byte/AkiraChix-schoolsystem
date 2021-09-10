@@ -33,7 +33,9 @@
             <th>teaching_hours</th>
             <th>course_unit</th>
             <th>Salary</th>
-            <th>syllabus</th>
+            <th>resume</th>
+            <th>image</th>
+
         </tr>
         {% for trainer in trainers%}
         <tr>     
@@ -41,8 +43,11 @@
         <td>{{trainer.last_name}}</td>
         <td>{{trainer.teaching_hours}}</td>
         <td>{{trainer.course_unit}}</td>
-        <td>{{trainer.Salary}}</td>
-        <td>{{trainer.syllabus}}</td>
+        <td>{{trainer.salary}}</td>
+        <td>{{trainer.resume}}</td>
+        <td>{{trainer.image}}</td>
+
+
     </tr>
     {%endfor%}
     </table>

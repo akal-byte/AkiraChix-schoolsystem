@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
-
+import os
 from django.db import models
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -44,6 +44,9 @@ INSTALLED_APPS = [
     'courses',
     'calendars',
     'crispy_forms',
+    'core',
+    'api',
+    'rest_framework',
 ]
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
@@ -59,6 +62,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'AkiraChixschoolsystem.urls'
+
+
 
 TEMPLATES = [
     {
@@ -77,6 +82,10 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'AkiraChixschoolsystem.wsgi.application'
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [BASE_DIR / 'static',]
+MEDIA_ROOT=os.path.join(BASE_DIR,'media')
+MEDIA_URL = '/media/'
 
 
 # Database
@@ -131,5 +140,7 @@ STATIC_URL = '/static/'
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
+
+
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-MEDIA_ROOT="/media/"
+

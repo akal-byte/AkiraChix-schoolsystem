@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,44 +7,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<h1>codeHive calendar</h1>
 <body>
+{% block content %}
+{{ calendar }}
+{% endblock content %}
     <style>
-    #table{
-        width: 100%;
-      }
-      #table td, #table th {
-          border: 1px solid #ddd;
-          padding: 8px;
-        }
-        #table tr:nth-child(even){background-color: #F2F2F2;}
-        #table tr:hover {background-color: #ddd;}
-        #table th {
-            padding-top: 12px;
-            padding-bottom: 12px;
-            text-align: left;
-            background-color: purple;
-            color: white;
-            font-family:sans-serif;
+        * {
+            font-family: 'Raleway', sans-serif;
         }
         
+        body {
+            background-image:url("https://images.pexels.com/photos/2232180/pexels-photo-2232180.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500") ;
+            background-repeat: no-repeat;
+            background-size: cover;
+            /* height: 50vh; */
+        }
+        
+        h1 {
+            text-align: center;
+            color: #260818;
+        }
+        
+        .calendar {
+            width: 98%;
+            margin: auto;
+            font-size: 13px;
+            margin-top: 50px;
+        }
+        
+        .calendar tr,
+        .calendar td {
+            border: 1px solid black;
+            background: #edeff3;
+            opacity: 0.9;
+        }
+        
+        .calendar th {
+            padding: 10px;
+            text-align: center;
+            font-size: 18px;
+        }
+        
+        .calendar td {
+            width: 60px;
+            height: 55px;
+            padding: 20px 0px 0px 5px;
+        }
+        
+        .month {
+            font-size: 25px;
+        }
+        
+        .date {
+            font-size: 16px;
+        }
+        
+        ul {
+            height: 100%;
+            padding: 0px 5px 0px 20px;
+        }
+        
+        a {
+            color: #17a2b8;
+        }
+        
+        th,
+        td {
+            padding: 8px;
+            opacity: 0.9;
+        }
+        
+        .left {
+            float: left;
+        }
+        
+        .right {
+            float: right;
+        }
+        
+        .btn {
+            outline: none;
+            color: black;
+            background-color: transparent;
+            box-shadow: 0 0 0 0;
+        }
+        
+        .clearfix {
+            margin: 15px;
+        }
     </style>
-    <table id="table">
-        <tr>
-            <th>Title</th>
-            <th>Unit Id</th>
-            <th>Stack</th>
-            <th>marketability</th>
-            <th>course_id</th>
-        </tr>
-        {% for course in courses%}
-        <tr>     
-        <td>{{course.title}}</td>
-        <td>{{course.unit_id}}</td>
-        <td>{{course.stack}}</td>
-        <td>{{course.marketability}}</td>
-        <td>{{course.course_id}}</td>
-    </tr>
-    {%endfor%}
-    </table>
 </body>
 </html>

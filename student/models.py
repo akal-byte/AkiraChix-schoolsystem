@@ -1,5 +1,6 @@
 from django.db import models
 from django.db.models.enums import Choices
+from django.db.models.fields import NullBooleanField
 
 # Create your models here.
 class Student(models.Model):
@@ -28,11 +29,11 @@ class Student(models.Model):
     nationality=models.CharField(max_length=30,choices=nationality_choices)
     gender=models.CharField(max_length=12,choices=gender_choices)
     language=models.CharField(max_length=14,choices=language_choices)
-    # image=models.ImageField(models.ImageField(null=True,blank=True))
+    image=models.ImageField(upload_to="images/",null=True,blank=True)
     idNumber=models.CharField(max_length=10)
     phone_number=models.CharField(max_length=12)
     courses=models.CharField(max_length=25)
-    # health_records=models.FileField(null=True,blank=True)
+    health_records=models.FileField(upload_to='documents/%Y/%m/%d',null=True,blank=True)
     class_name=models.CharField(max_length=10,null=True,blank=True)
     room_number=models.IntegerField(null=True,blank=True)
     mentor_name=models.CharField(max_length=20,null=True,blank=True)

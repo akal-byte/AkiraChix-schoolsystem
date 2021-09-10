@@ -19,10 +19,11 @@ from django.urls import path
 from django.urls.conf import include
 
 urlpatterns = [
+    path('',include ("core.urls")),
     path('admin/', admin.site.urls),
     path("student/",include ("student.urls")), 
     path("trainer/",include ("trainer.urls")), 
     path("courses/",include ("courses.urls")), 
     path("calendars/",include ("calendars.urls")), 
-
+    path("api/",include("api.urls")),
 ]
