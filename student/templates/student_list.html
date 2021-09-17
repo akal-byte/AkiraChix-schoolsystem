@@ -8,6 +8,9 @@
 </head>
 <body>
     <style>
+        #picha{
+            width:100%;
+        }
     #table{
         width: 100%;
       }
@@ -52,13 +55,15 @@
         <td>{{student.nationality}}</td>
         <td>{{student.gender}}</td>
         <td>{{student.health_records}}</td>
-        <td>{{student.image}}</td>
-        <td><a href="{%url 'edit_student' id=student.id%}">Edit</a></td>
-        <td><a href="{%url 'student_profile' id=student.id%}">Profile</a></td>
-        <td><a href="{%url 'delete_student' id=student.id%}">Delete</a></td>
+        {% if student.image %}
+        <td> <img id="picha" src="{{student.image.url}}"></td>
+        {% endif %}
+        <td><a href="{% url 'edit_student' id=student.id %}">Edit</a></td>
+        <td><a href="{% url 'student_profile' id=student.id %}">Profile</a></td>
+        <td><a href="{% url 'delete_student' id=student.id %}">Delete</a></td>
 
     </tr>
-    {%endfor%}
+    {% endfor %}
     </table>
 </body>
 </html>
