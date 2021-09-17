@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     'trainer',
     'courses',
     'calendars',
-    'crispy_forms',
     'core',
     'api',
     'rest_framework',
