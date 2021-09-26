@@ -7,7 +7,6 @@ class Student(models.Model):
     first_name=models.CharField(max_length=9)
     last_name=models.CharField(max_length=9)
     age=models.PositiveSmallIntegerField()
-    date_of_birth=models.DateField()
     email=models.EmailField()
     nationality_choices=(
      ("Kenyan","Kenyan"),

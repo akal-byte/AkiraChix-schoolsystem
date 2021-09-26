@@ -12,12 +12,10 @@ class StudentModelTestCase(TestCase):
     def setUp(self):
         self.student=Student(
             first_name="Mary",last_name="Owuor",age=23,
-            date_of_birth=1998,
             courses="Python",
             phone_number="0723456789",
             idNumber=456790,
             email="owuormary@gmail.com",
-            date_of_birth=2000-12-12
             
             )
     
