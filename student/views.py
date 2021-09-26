@@ -31,7 +31,7 @@ def edit_student(request,id):
     else:
             form=StudentRegistrationForm(instance=student)
     return render(request,"edit_student.html",{"form":form})
-
+    
 def student_profile(request,id):
     student=Student.objects.get(id=id)
     return render(request,"student_profile.html",{"student":student})

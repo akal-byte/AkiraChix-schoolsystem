@@ -43,3 +43,9 @@ class Student(models.Model):
 
     def __str__(self):
         return self.first_name
+
+    def full_name(self):
+       return f"{self.first_name} {self.last_name}"
+
+    def year_of_birth(self):
+        return 2021-{self.age}
