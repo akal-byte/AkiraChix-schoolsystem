@@ -21,4 +21,15 @@ class Trainer(models.Model):
     gender=models.CharField(max_length=12,choices=gender_choices,blank=True,null=True)
     phone_number=models.CharField(max_length=20,blank=True,null=True)
 
+    def __str__(self):
+        return self.first_name
 
+    def full_name(self):
+       return f"{self.first_name} {self.last_name}"
+
+    def get_trainer_profile_image(self):
+         size = (200, 200)
+         color = (255, 0, 0, 0)
+         image = Image.new("RGBA", size, color)
+         image.save(temp_file, 'jpeg')
+         return temp_file

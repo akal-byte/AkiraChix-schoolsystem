@@ -1,55 +1,104 @@
+</html>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+<title>Document</title>
 </head>
 <body>
     <style>
-    #table{
-        width: 100%;
-      }
-      #table td, #table th {
-          border: 1px solid #ddd;
-          padding: 8px;
-        }
-        #table tr:nth-child(even){background-color: #F2F2F2;}
-        #table tr:hover {background-color: #ddd;}
-        #table th {
-            padding-top: 12px;
-            padding-bottom: 12px;
-            text-align: left;
-            background-color: purple;
-            color: white;
-            font-family:sans-serif;
-        }
+       
+       @import "compass/css3";
+
+@import "compass/css3";
+
+* { 
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box; 
+  box-sizing: border-box; 
+  font-family: 'Poppins';
+}
+
+body {
+  background:#4c7aa0;
+}
+
+table {
+  border-collapse: separate;
+  background:#fff;
+  border-radius:5px;
+  margin:50px auto;
+}
+
+thead {
+  border-radius:5px;
+}
+
+thead th {
+  font-size:16px;
+  font-weight:400;
+  color:#fff;
+  text-align:left;
+  padding:20px;
+  background-image:linear-gradient(#3f132f, #460a31);
+  
+}
+
+tbody tr td {
+  font-weight:600;
+  color:black;
+  font-size:16px;
+  padding: 20px;
+  border-bottom:1px solid #e0e0e0;
+  
+}
+
+
+
+tbody:hover > tr td {
+    color: purple;
+}
+
+tbody:hover > tr:hover td {
+  color:purple;
+}
     </style>
-    <table id="table">
-        <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>teaching_hours</th>
-            <th>course_unit</th>
-            <th>Salary</th>
-            <th>resume</th>
-            <th>image</th>
-
-        </tr>
-        {% for trainer in trainers%}
-        <tr>     
-        <td>{{trainer.first_name}}</td>
-        <td>{{trainer.last_name}}</td>
-        <td>{{trainer.teaching_hours}}</td>
-        <td>{{trainer.course_unit}}</td>
-        <td>{{trainer.salary}}</td>
-        <td>{{trainer.resume}}</td>
-        <td>{{trainer.image}}</td>
-
-
-    </tr>
-    {%endfor%}
+    <table>
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>teaching_hours</th>
+                <th>course_unit</th>
+                <th>Salary</th>
+                <th>image</th>
+                <th>Edit</th>
+                <th>Profile</th>
+                <th>Delete</th>
+    
+            </tr>
+            {% for trainer in trainers%}
+            <tr>     
+            <td>{{trainer.first_name}}</td>
+            <td>{{trainer.last_name}}</td>
+            <td>{{trainer.teaching_hours}}</td>
+            <td>{{trainer.course_unit}}</td>
+            <td>{{trainer.salary}}</td>
+            {% if trainer.image %}
+        <td><img width="100px" id="picha"  src="{{trainer.image.url}}"></td>
+        {% endif %}
+        <td><a href="{% url 'edit_trainer' id=trainer.id %}">Edit</a></td>
+        <td><a href="{% url 'trainer_profile' id=trainer.id %}">Profile</a></td>
+        <td><a href="{% url 'delete_trainer' id=trainer.id %}">Delete</a></td>
+        <tbody>
+            </tr>
+        </tbody>
+     {% endfor %}
     </table>
 </body>
 </html>
