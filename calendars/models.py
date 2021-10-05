@@ -5,9 +5,9 @@ from django.urls import reverse
 # Create your models here.
 class Calendars(models.Model):
     event_name=models.CharField(max_length=9,blank=True,null=True)
-    start_time=models.DateTimeField(null=True, blank=True)
+    start_time=models.DateField(null=True, blank=True)
     event_id=models.CharField(max_length=10,default=1)
-    end_time=models.DateTimeField(null=True, blank=True)
+    end_time=models.DateField(null=True, blank=True)
     event_agenda=models.CharField(max_length=200,blank=True,null=True)
     event_organizer=models.CharField(max_length=9,blank=True,null=True)
     event_venue=models.CharField(max_length=19,blank=True,null=True)
