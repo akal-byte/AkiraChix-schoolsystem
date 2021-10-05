@@ -1,1 +1,1 @@
-web:gunicorn AkiraChixschoolsystem.wsgi --logfile -
+web: gunicorn AkiraChixschoolsystem.wsgi --logfile -
