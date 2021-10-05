@@ -12,7 +12,7 @@
 
     <title>codeHive Registration</title>
 </head>
-<body style="background-color: rgb(211, 209, 209)">
+<body style="background-color: #151B36;">
   {% extends 'extends.html' %}
   {% block content %}
   <div id="formbody" >
@@ -31,13 +31,12 @@
   <p style="font-size: 15px;color: rgb(77, 73, 77);;"><span style=" color: purple;">first_name:</span>{{student.first_name}}</p><hr>
   <p style="font-size: 15px;color: rgb(77, 73, 77);;"><span style=" color: purple;">Last Name:</span>{{student.last_name}}</p><hr>
   <p style="font-size: 15px;color: rgb(77, 73, 77);;"><span style=" color: purple;">Nationality:</span>{{student.nationality}}</p><hr>
-  <p style="font-size: 15px;color: rgb(77, 73, 77);;"><span style=" color: purple;">Academic Year:</span>{{student.academic_year}}</p><hr>
   <p style="font-size: 15px;color: rgb(77, 73, 77);;"><span style=" color: purple;">Room Number:</span>{{student.room_number}}</p><hr>
   <p style="font-size: 15px;color: rgb(77, 73, 77);;"><span style=" color: purple;">Class Name:</span>{{student.class_name}}</p><hr>
   <p style="font-size: 15px;color: rgb(77, 73, 77);;"><span style=" color: purple;">Courses:</span>{{student.courses}}</p><hr>
   <p style="font-size: 15px;color: rgb(77, 73, 77);;"><span style="color: purple;">Health Records:</span><a href="{{student.medical_report.url}}">Download</a></p><hr>
-  <a id="edit" href="{% url 'student:delete_student' student.id %}">Delete</a>
-  <a id="edit" href="{% url 'student:edit_student' student.id %}">Edit</a>
+  <a id="edit" href="{% url 'delete_student' student.id %}">Delete</a>
+  <a id="edit" href="{% url 'edit_student' student.id %}">Edit</a>
 
     
      
