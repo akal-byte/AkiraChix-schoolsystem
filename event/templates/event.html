@@ -14,8 +14,8 @@
   <h1 style="padding: 30px; margin-left: 5%;color: purple;font-size: 30px;margin-top: 1%;font-family: 'Montserrat', sans-serif;">CODEHIVE 2021 EVENTS CALENDER</h1>
 
 <div class="clearfix">
-	<a id="prev" href="{% url 'events:calendar' %}?{{ prev_month }}"> Previous Month </a>
-	<a id="next" href="{% url 'events:calendar' %}?{{ next_month }}"> Next Month </a>
+	<a id="prev" href="{% url 'calendar' %}?{{ prev_month }}"> Previous Month </a>
+	<a id="next" href="{% url 'calendar' %}?{{ next_month }}"> Next Month </a>
 </div>
 
 {{ calendar }}
