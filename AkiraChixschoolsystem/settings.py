@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'courses',
     'core',
     'api',
+    'event',
     'rest_framework',
     
 ]
