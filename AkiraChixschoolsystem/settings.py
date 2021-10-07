@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-wzuy3k6u%ft-d^j+n+qq00s)f=1^f@55*xt1ad2xpit^szel)k'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1', 'akira-schoolsystem.herokuapp.com']
 
@@ -106,9 +106,9 @@ DATABASES = {
         'PORT': '',
     }
 }
-db_from_env = dj_database_url.config(conn_max_age=600)
 DATABASES['default'].update(db_from_env)
-os.environ['DJANGO_SETTINGS_MODULE'] = 'AkiraChixschoolsystem.settings'
+
+db_from_env = dj_database_url.config(conn_max_age=600)
 
 
 # Password validation
